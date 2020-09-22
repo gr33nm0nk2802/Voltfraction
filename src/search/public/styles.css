@@ -1,0 +1,153 @@
+@font-face {
+    font-family: Poppins-Regular;
+    src: url('../fonts/poppins/Poppins-Regular.ttf'); 
+}
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+}
+
+.align-center {
+    text-align: center;
+}
+
+
+.container-contact100 {
+
+    width: 100%;  
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    
+  }
+
+
+  .contact100-form {
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 56px 55px 63px 55px;
+  }
+
+  @media (max-width:800px){
+    .contact100-form {
+        width: 100%;
+      }
+  }
+  
+  .contact100-form-title {
+    width: 100%;
+    display: block;
+    font-family: Poppins-Regular;
+    font-size: 30px;
+    color: white;
+    line-height: 1.2;
+    text-align: center;
+    padding-bottom: 33px;
+  }
+
+
+
+.label-input100 {
+    font-family: Poppins-Regular;
+    font-size: 24px;
+    color: white;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 55px;
+    border-bottom: none;
+    padding: 10px 6px;
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+
+.input100 {
+  display: block;
+  width: 100%;
+  background: white;
+  font-family: Poppins-Regular;
+  font-size: 18px;
+  color: black;
+  line-height: 3;
+  padding: 0 25px;
+}
+
+@media (max-width:800px){
+    .label-input100 {
+        font-family: Poppins-Regular;
+        font-size: 37px;
+       
+    }
+}
+
+.container-contact100-form-btn {
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 23px;
+  }
+
+.contact100-form-btn {
+    margin-top: 30px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    min-width: 200px;
+    height: 50px;
+    border-radius: 2px;
+    background: #fbb710;
+  
+    font-family: Montserrat-Bold;
+    font-size: 15px;
+    color: black;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  
+  }
+  
+  .contact100-form-btn:hover {
+    background: #f5c448;
+    color: black;
+  }
+
+  .club{
+    background-image: url(photo.jpg);
+    padding:200px;
+  }
+  
+@media(max-width:500px){
+  .club{
+    padding:0px;
+  }}
+
+

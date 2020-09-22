@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>newCollege</title>
+	
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  
+    <div class="container-contact100 align-center">
+    
+
+    <form class="contact100-form validate-form" >
+        <label class="label-input100" for="college">College Name</label>
+        <input class="input100" type="text" name="collegeName" id="college" placeholder="College Name" autocomplete="off" style="text-transform: lowercase;">
+        <label class="label-input100" for="student">Student Name</label>
+        <input class="input100" type="text" name="studentName" id="student" placeholder="Student Name" autocomplete="off" style="text-transform: lowercase;">
+        <label class="label-input100" for="student">Phone Number</label>
+        <input class="input100" type="text" name="phone" id="phone" placeholder="Phone Numbe" autocomplete="off" style="text-transform: lowercase;">
+        <label class="label-input100" for="student">Email Address</label>
+        <input class="input100" type="email" name="email" id="email" placeholder="Email Address" autocomplete="off" style="text-transform: lowercase;">
+        <a class="contact100-form-btn"  onclick={sendData()}>Register</a>
+        <!-- <div class="container-contact100-form-btn">
+            <button class="contact100-form-btn" type="submit">Add new college</button>
+        </div> -->
+    </form>
+
+    </div>
+    <script>
+        async function sendData(){
+            var collegeName = $("#college").val();
+            var studentName = $("#student").val();
+            var phone = $("#phone").val();
+            var email = $("#email").val();
+            if(collegeName){
+            console.log(collegeName);
+            // alert(collegeName);
+            var data= {
+                "collegeName":collegeName
+            }
+        $.post( "https://collegx-campus-crud.herokuapp.com/collegeFind",data)
+      .done(function( datar ) {
+        alert("There is already a voltfraction club in your college. Stay tuned for updates!")
+      })
+      .fail(function(err){
+          if(err.status == 404)
+          {
+              var datasend = {
+                  "collegeName":collegeName,
+                  "studentName":studentName,
+                  "phone":phone,
+                  "email":email
+              }
+            $.post( "https://collegx-campus-crud.herokuapp.com/newCollege",datasend)
+            .done(function(rec){
+                console.log(rec);
+                alert("Registered Successfully! We will get back to you.")
+            })
+            .fail(function(err){
+                console.log(err);
+            });
+          }
+        console.log(err);
+      });
+    }
+    }
+    </script>
+</body>
+</html>

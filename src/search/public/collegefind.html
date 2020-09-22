@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <title>collegefind</title>
+    
+    
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Aclonica&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" rel="stylesheet">
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="../../css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="../../css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="../../css/owl.carousel.css"/>
+	<link rel="stylesheet" href="../../css/style.css"/>
+    <link rel="stylesheet" href="../../css/animate.css"/>
+    <link rel="stylesheet" href="styles.css" />
+	<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+</head>
+<body>
+   
+<!-- 
+    <div class="container-contact100 align-center">
+        <form class="contact100-form validate-form">
+            <label class="label-input100" for="college">Search for Registered Voltfraction Clubs here</label>
+            <input class="input100" type="text" name="collegeName" id="college" placeholder="Search your college" autocomplete="off" style="text-transform: lowercase;">
+            <a class="contact100-form-btn"  onclick={sendData()}>Search</a>
+            <a  style="margin-left:10px; text-decoration: none;" class="contact100-form-btn" href="newcollege.html">Register College</a>
+        </form>
+    </div> -->
+    <div  class="club" >
+        <h1 id="our-team-heading" style="padding-bottom: 0%; padding-top: 5.7rem;">Search for Registered Voltfraction Clubs here <span></span></h1>
+        <form class="contact100-form validate-form">
+            <!-- <label class="label-input100" for="college">Search for Registered Voltfraction Clubs here</label> -->
+            <input class="input100" type="text" name="collegeName" id="college" placeholder="Search your college" autocomplete="off" style="text-transform: lowercase;">
+            <a class="contact100-form-btn" style="color: black;"  onclick={sendData()}>Search</a>
+            <a  style="margin-left:10px; text-decoration: none; " class="contact100-form-btn" href="newcollege.html">Register College</a>
+        </form>
+        
+    
+          
+    </div>
+
+<script>
+    async function sendData(){
+        var collegeName = $("#college").val();
+        if(collegeName){
+        console.log(collegeName);
+        // alert(collegeName);
+        var data= {
+            "collegeName":collegeName
+        }
+    $.post( "https://collegx-campus-crud.herokuapp.com/collegeFind",data)
+  .done(function( datar ) {
+    alert("There is already a voltfraction club in your college. Stay tuned for updates!")
+  })
+  .fail(function(err){
+      if(err.status == 404)
+      alert("Your college is not registered yet! Register Below!");
+    console.log(err);
+  });
+}
+}
+</script>
+</body>
+</html>
